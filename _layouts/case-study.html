@@ -1,0 +1,318 @@
+---
+---
+
+{% include header.html %}
+<div class="w-full bg-white sticky top-0 z-50">
+    {% include navbar.html %}
+</div>
+
+<main class="border-psa-300 border-t-6 border-b-6 bg-gray-50">
+    <!-- <div class="text-white h-56 md:h-64 bg-no-repeat bg-cover bg-center" style="background-image: radial-gradient( circle 1077px at -16.2% 53.5%,  rgba(132,25,137,1) 0%, rgba(83,9,88,1) 22.3%, rgba(67,18,74,1) 48.8%, rgba(18,38,111,1) 86.4%, rgba(0,53,147,1) 100.2% );">
+        <div class="container mx-auto flex h-full">
+            <h1 class="text-4xl px-3 md:px-0 md:text-5xl font-bold uppercase my-auto">{{ page.title }}</h1>
+        </div>
+    </div> -->
+
+    <div class="container mx-auto mt-6 px-3 md:px-0">
+        <div class="">
+            <div class="col-lg-12">
+
+                {% if page.url == '/register' %}
+                    <div class="px-8 py-14 mb-12 space-y-4 shadow-md bg-gray-100 mt-16">
+                        <div id="mc_embed_shell">
+                            <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+                        <style type="text/css">
+                              #mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width: 100%;}
+                              /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                                 We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                      </style>
+                      <div id="mc_embed_signup">
+                          <form action="https://psagroup.us19.list-manage.com/subscribe/post?u=06ab79792165e0a7fb818d578&amp;id=6a23af39b9&amp;f_id=00a390e4f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                              <div id="mc_embed_signup_scroll"><h2>Subscribe to download</h2>
+                                  <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                                  <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""><span id="mce-EMAIL-HELPERTEXT" class=""></span></div><div class="mc-field-group"><label for="mce-FNAME">First Name </label><input type="text" name="FNAME" class=" text" id="mce-FNAME" value=""></div><div class="mc-field-group"><label for="mce-LNAME">Last Name </label><input type="text" name="LNAME" class=" text" id="mce-LNAME" value=""></div>
+                              <div id="mce-responses" class="clear">
+                                  <div class="response" id="mce-error-response" style="display: none;"></div>
+                                  <div class="response" id="mce-success-response" style="display: none;">
+                                  </div>
+                              </div><div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_06ab79792165e0a7fb818d578_6a23af39b9" tabindex="-1" value=""></div><div class="clear"><input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe"></div>
+                          </div>
+
+                          <h1><a href="/case_study" id="skip_n_go" class="underline hidden text-sm">Skip and go to download</a></h1>
+                          <h1><a href="/case_study" id="go_to_download" class="underline hidden text-sm">Directing you to the download page...</a></h1>
+                      </form>
+                      </div>
+                      <script>
+
+
+                      </script>
+                      <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
+                    </div>
+                    {% else %}
+
+                    <div class="container mx-auto h-auto py-6 px-4 ">
+                      <ul>
+                        <li>
+                            <input type="checkbox" id="folder2" class="folder">
+                            <label for="folder2" class="folder-label">
+                                <div class="flex mt-4 border-t-2 border-b">
+                                  <span class="folder-icon py-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#003594" class="bi bi-folder2" viewBox="0 0 16 16">
+                                      <path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5z"/>
+                                    </svg>
+                                  </span>
+                                  <div class="flex flex-col pl-4 py-4">
+                                    <h3 class="text-xl">PSA Case Studies</h3>
+                                    <p class="text-lg text-gray-500">Case Studies by Industry </p>
+                                  </div>
+                                </div>
+                            </label>
+                            <div class="folder-content">
+                                <ul class="file-list">
+                                    <li>
+                                        <label class="flex w-full relative">
+                                          <span class="py-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#003594" class="bi bi-filetype-pdf" viewBox="0 0 16 16">
+                                              <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zM1.6 11.85H0v3.999h.791v-1.342h.803q.43 0 .732-.173.305-.175.463-.474a1.4 1.4 0 0 0 .161-.677q0-.375-.158-.677a1.2 1.2 0 0 0-.46-.477q-.3-.18-.732-.179m.545 1.333a.8.8 0 0 1-.085.38.57.57 0 0 1-.238.241.8.8 0 0 1-.375.082H.788V12.48h.66q.327 0 .512.181.185.183.185.522m1.217-1.333v3.999h1.46q.602 0 .998-.237a1.45 1.45 0 0 0 .595-.689q.196-.45.196-1.084 0-.63-.196-1.075a1.43 1.43 0 0 0-.589-.68q-.396-.234-1.005-.234zm.791.645h.563q.371 0 .609.152a.9.9 0 0 1 .354.454q.118.302.118.753a2.3 2.3 0 0 1-.068.592 1.1 1.1 0 0 1-.196.422.8.8 0 0 1-.334.252 1.3 1.3 0 0 1-.483.082h-.563zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638z"/>
+                                            </svg>
+                                          </span>
+                                          <div class="flex my-2 border-b">
+                                            <div class="flex flex-col pl-4 py-4">
+                                              <h3>Shipping/Freight Case Studies</h3>
+                                              <!-- <p>International Freight Due Diligence Case Studies</p> -->
+                                            </div>
+                                          </div>
+                                          <a href="/uploads/PSACSDueDiligenceforFreight.pdf" download>
+                                            <span class="absolute right-0 mr-4 mt-4">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#003594" class="bi bi-download cursor-pointer" viewBox="0 0 16 16">
+                                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                              </svg>
+                                            </span>
+                                          </a>                                    
+                                        </label>
+                                    </li>
+                                    <li>
+                                      <label class="flex w-full relative">
+                                        <span class="py-4">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#003594" class="bi bi-filetype-pdf" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zM1.6 11.85H0v3.999h.791v-1.342h.803q.43 0 .732-.173.305-.175.463-.474a1.4 1.4 0 0 0 .161-.677q0-.375-.158-.677a1.2 1.2 0 0 0-.46-.477q-.3-.18-.732-.179m.545 1.333a.8.8 0 0 1-.085.38.57.57 0 0 1-.238.241.8.8 0 0 1-.375.082H.788V12.48h.66q.327 0 .512.181.185.183.185.522m1.217-1.333v3.999h1.46q.602 0 .998-.237a1.45 1.45 0 0 0 .595-.689q.196-.45.196-1.084 0-.63-.196-1.075a1.43 1.43 0 0 0-.589-.68q-.396-.234-1.005-.234zm.791.645h.563q.371 0 .609.152a.9.9 0 0 1 .354.454q.118.302.118.753a2.3 2.3 0 0 1-.068.592 1.1 1.1 0 0 1-.196.422.8.8 0 0 1-.334.252 1.3 1.3 0 0 1-.483.082h-.563zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638z"/>
+                                          </svg>
+                                        </span>
+                                        <div class="flex my-2 border-b">
+                                          <div class="flex flex-col pl-4 py-4">
+                                            <h3>Pharmaceutical / Medical Device Case Studies</h3>
+                                            <!-- <p>Pharmaceutical /  Medical Device Case Studies</p> -->
+                                          </div>
+                                        </div>
+                                        <a href="/uploads/PSACSHealthcareDD.pdf" download>
+                                          <span class="absolute right-0 mr-4 mt-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#003594" class="bi bi-download cursor-pointer" viewBox="0 0 16 16">
+                                              <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                              <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                            </svg>
+                                          </span>
+                                        </a>                                    
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="flex w-full relative">
+                                        <span class="py-4">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#003594" class="bi bi-filetype-pdf" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zM1.6 11.85H0v3.999h.791v-1.342h.803q.43 0 .732-.173.305-.175.463-.474a1.4 1.4 0 0 0 .161-.677q0-.375-.158-.677a1.2 1.2 0 0 0-.46-.477q-.3-.18-.732-.179m.545 1.333a.8.8 0 0 1-.085.38.57.57 0 0 1-.238.241.8.8 0 0 1-.375.082H.788V12.48h.66q.327 0 .512.181.185.183.185.522m1.217-1.333v3.999h1.46q.602 0 .998-.237a1.45 1.45 0 0 0 .595-.689q.196-.45.196-1.084 0-.63-.196-1.075a1.43 1.43 0 0 0-.589-.68q-.396-.234-1.005-.234zm.791.645h.563q.371 0 .609.152a.9.9 0 0 1 .354.454q.118.302.118.753a2.3 2.3 0 0 1-.068.592 1.1 1.1 0 0 1-.196.422.8.8 0 0 1-.334.252 1.3 1.3 0 0 1-.483.082h-.563zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638z"/>
+                                          </svg>
+                                        </span>
+                                        <div class="flex my-2 border-b">
+                                          <div class="flex flex-col pl-4 py-4">
+                                            <h3>Manufacturing Case Studies</h3>
+                                            <!-- <p>Oil & Gas/Mining & Minerals Case Studies</p> -->
+                                          </div>
+                                        </div>
+                                        <a href="/uploads/PSACSManufacturingDD.pdf" download>
+                                          <span class="absolute right-0 mr-4 mt-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#003594" class="bi bi-download cursor-pointer" viewBox="0 0 16 16">
+                                              <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                              <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                            </svg>
+                                          </span>
+                                        </a>                                    
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="flex w-full relative">
+                                        <span class="py-4">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#003594" class="bi bi-filetype-pdf" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zM1.6 11.85H0v3.999h.791v-1.342h.803q.43 0 .732-.173.305-.175.463-.474a1.4 1.4 0 0 0 .161-.677q0-.375-.158-.677a1.2 1.2 0 0 0-.46-.477q-.3-.18-.732-.179m.545 1.333a.8.8 0 0 1-.085.38.57.57 0 0 1-.238.241.8.8 0 0 1-.375.082H.788V12.48h.66q.327 0 .512.181.185.183.185.522m1.217-1.333v3.999h1.46q.602 0 .998-.237a1.45 1.45 0 0 0 .595-.689q.196-.45.196-1.084 0-.63-.196-1.075a1.43 1.43 0 0 0-.589-.68q-.396-.234-1.005-.234zm.791.645h.563q.371 0 .609.152a.9.9 0 0 1 .354.454q.118.302.118.753a2.3 2.3 0 0 1-.068.592 1.1 1.1 0 0 1-.196.422.8.8 0 0 1-.334.252 1.3 1.3 0 0 1-.483.082h-.563zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638z"/>
+                                          </svg>
+                                        </span>
+                                        <div class="flex my-2 border-b">
+                                          <div class="flex flex-col pl-4 py-4">
+                                            <h3>General Overview</h3>
+                                            <!-- <p>General Overview</p> -->
+                                          </div>
+                                        </div>
+                                        <a href="/uploads/PSACSGeneralDueDiligence.pdf" download>
+                                          <span class="absolute right-0 mr-4 mt-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#003594" class="bi bi-download cursor-pointer" viewBox="0 0 16 16">
+                                              <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                              <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                            </svg>
+                                          </span>
+                                        </a>                                    
+                                      </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                      </ul>
+                    </div>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="container mx-auto h-auto py-6 px-4 relative flex items-center">
+      <div class="flex-grow border-t border-gray-400"></div>
+      <span class="flex-shrink mx-4 text-psa-400 text-3xl">More About PSA</span>
+      <div class="flex-grow border-t border-gray-400"></div>
+    </div>
+
+    <div class="container mx-auto h-auto py-6 px-4 grid grid-cols-4 gap-x-14 px-6 py-8 mb-10 border-gray-400">
+        <div class="flex flex-col space-y-4">
+            <p class="editable font-bold text-xl">About Us</p>
+            <p class="editable font-light flex-grow">We are a global risk consultancy, delivering critical information to our clients.</p>
+            <a href="/about" class="editable h-6 link-arrow"></a>
+        </div>
+    
+        <div class="flex flex-col space-y-4">
+            <p class="editable font-bold text-xl">Our Experts</p>
+            <p class="editable font-light flex-grow">Our multi-disciplined experts have extensive background and deep experience gained from professional backgrounds in various fields.</p>
+            <a href="/leadership" class="editable h-6 link-arrow inset-x-0 bottom-0 "></a>
+        </div>
+    
+        <div class="flex flex-col space-y-4">
+            <p class="editable font-bold text-xl">Our Services</p>
+            <p class="editable font-light flex-grow">We deliver critical information through our three core service lines.</p>
+            <a href="/due-diligence" class="editable h-6 link-arrow inset-x-0 bottom-0 "></a>
+        </div>
+    
+        <div class="flex flex-col space-y-4">
+            <p class="editable font-bold text-xl">Our Insights</p>
+            <p class="editable font-light flex-grow">Coverage of the latest issues in risk and compliance from PSA’s experts.</p>
+            <a href="/insights" class="editable h-6 link-arrow inset-x-0 bottom-0 "></a>
+        </div>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="container mx-auto h-auto px-8 py-14 mb-12 space-y-8 shadow-md bg-psa-300 mt-16">
+          <p class="text-2xl font-bold text-psa-50">Speak with our Experts</p>
+          <p class="text-contact">PSA is committed to the idea that everything we do is driven by value-added human analysis. We put findings in context and deliver insight, not just information. With offices placed throughout the globe, PSA’s team is positioned to provide insight and analysis on subjects anywhere in the world.</p>
+          </br></br>
+          <a href="/contact-us" class="btn-contact">Get in touch</a>
+      </div>
+    </div>
+
+</main>
+
+<script>
+var successResponseElement = document.querySelector('#mce-success-response');
+
+// 创建 MutationObserver 实例
+var successObserver = new MutationObserver(function(mutationsList) {
+  for (var mutation of mutationsList) {
+    if (mutation.attributeName === 'style') {
+      var computedStyle = window.getComputedStyle(successResponseElement);
+      var isDisplayed = (computedStyle.display === 'block');
+      if (isDisplayed) {
+        // console.log('mce-success-response 元素显示为 block');
+        document.getElementById("go_to_download").style.display = "block"
+        setTimeout(function() {
+            window.location.href = '/case_study';
+        }, 5000);
+      }
+      else{
+        // console.log('mce-success-response 元素显示为 block');
+        document.getElementById("go_to_download").style.display = "none"
+      }
+    }
+  }
+});
+
+// 配置并启动 MutationObserver
+successObserver.observe(successResponseElement, { attributes: true });
+
+var errorResponseElement = document.querySelector('#mce-error-response');
+
+// 创建 MutationObserver 实例
+var errorObserver = new MutationObserver(function(mutationsList) {
+  for (var mutation of mutationsList) {
+    if (mutation.attributeName === 'style') {
+      var computedStyle = window.getComputedStyle(errorResponseElement);
+      var isDisplayed = (computedStyle.display === 'block');
+      if (isDisplayed) {
+        // console.log('mce-error-response 元素显示为 block');
+        document.getElementById("skip_n_go").style.display = "block"
+      }
+      else{
+        // console.log('mce-error-response 元素显示为 block');
+        document.getElementById("skip_n_go").style.display = "none"
+      }
+    }
+  }
+});
+
+// 配置并启动 MutationObserver
+errorObserver.observe(errorResponseElement, { attributes: true });
+</script>
+
+{% include footer.html %}
+
+<style>
+  
+.text-contact{
+  font-size:18px;
+  background-color:transparent;
+  color:#fff;
+} 
+
+.btn-contact{
+  font-size:18px;
+  font-weight: 900;
+  padding: 8px 35px;
+  border-radius:20px;
+  background-color:transparent;
+  border: 3px solid #fff;
+  color:#fff;
+  margin-top:40px;
+} 
+
+.folder {
+    display: flex;
+    margin-left: 20px;
+    display: none;
+}
+
+.folder-content {
+    display: none;
+}
+
+.folder:checked~.folder-content {
+    display: block;
+}
+
+.folder-icon {
+    display: inline-block;
+    width: 80px;
+    background-image: url("path/to/folder-icon.png"); /* 替换为文件夹图标的实际路径 */
+    background-size: cover;
+    margin-right: 10px; /* 调整图标与文本之间的间距 */
+}
+
+.file-list{
+  margin-left:80px;
+}
+</style>

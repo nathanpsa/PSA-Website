@@ -1,0 +1,19 @@
+- heading: Pacific Strategies and Assessments
+  paragraph: >-
+    We help clients navigate an increasingly complex world, where the greatest
+    opportunities are often accompanied by the greatest risks.
+  button_link: /about
+  button_text: Learn more
+  background_image: /assets/images/homepage-banner-min.jpg
+- heading: 'Supply Chain Due Diligence and OFAC '
+  paragraph: >-
+    OFAC enforcement is evolving. Learn more about how sanctions may impact
+    supply chain due diligence with PSA's brief. 
+  button_link: https://www.psagroup.com/supply-chain-due-diligence-and-ofac/
+  button_text: Read now
+  background_image: /uploads/scddjune08.jpg
+- heading: Transactional Due Diligence
+  paragraph: Due diligence services to help you uncover off-balance sheet risks.
+  button_link: /transactional-due-diligence
+  button_text: Learn more
+  background_image: /uploads/homepage-banner-transactional-dd.jpg

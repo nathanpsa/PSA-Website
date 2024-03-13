@@ -1,0 +1,30 @@
+---
+layout: service
+permalink:
+title:
+service_area:
+content_blocks:
+banner_image:
+banner_image_url:
+form_submit_value:
+form_heading_value:
+show_other_services: true
+services_list:
+_inputs:
+  service_area:
+    type: text
+    comment: Use this to specify the tag that will be queried when displaying related insights
+  form_submit_value:
+    type: text
+    comment: Sets the value on the CTA form submit button
+  form_heading_value:
+    type: text
+    comment: Sets the value on the CTA form header
+  show_other_services:
+    type: switch
+  services_list:
+    type: multiselect
+    options:
+      values: ['due-diligence', 'advisory', 'investigations']
+      allow_create: false
+---

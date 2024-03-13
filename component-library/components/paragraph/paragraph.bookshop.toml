@@ -1,0 +1,14 @@
+[component]
+structures = ["content_blocks"]
+label = "Paragraph"
+description = "Adds a paragraph"
+icon = "notes"
+tags = []
+
+[props]
+text_size.select = ["text-sm", "text-lg", "text-xl", "text-2xl", "text-3xl", "text-4xl"]
+text_color.select = ["black", "psa-100", "psa-200", "psa-300"]
+font_weight.select = ["light", "normal", "medium", "semibold", "bold", "extrabold"]
+font_weight.default = "normal"
+anchor_id = ""
+paragraph_text = "The heading goes here"

@@ -1,0 +1,9 @@
+{% if include.display_divider %}
+	<div class="{{c}}__inner-wrapper component">
+	  <hr class="{{ include.margin_top }} {{ include.margin_bottom }}" />
+	</div>
+{% else %}
+  <div class="{{c}}__inner-wrapper component">
+    <p class="{{ include.margin_top }} {{ include.margin_bottom }}" />
+  </div>
+{% endif %}

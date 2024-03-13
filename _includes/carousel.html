@@ -1,0 +1,102 @@
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<script>
+    var cont = 0;
+    function loopSlider() {
+        var xx = setInterval(function () {
+            switch (cont) {
+                case 0: {
+                    $("#slider-1").fadeOut(400);
+                    $("#slider-2").delay(200).fadeIn(400);
+                    $("#sButton1").removeClass("bg-blue-800");
+                    $("#sButton2").addClass("bg-blue-800");
+                    cont = 1;
+
+                    break;
+                }
+                case 1:
+                    {
+
+                        $("#slider-2").fadeOut(400);
+                        $("#slider-1").delay(200).fadeIn(400);
+                        $("#sButton2").removeClass("bg-blue-800");
+                        $("#sButton1").addClass("bg-blue-800");
+
+                        cont = 0;
+
+                        break;
+                    }
+
+
+            }
+        }, 10000);
+
+    }
+
+    function reinitLoop(time) {
+        clearInterval(xx);
+        setTimeout(loopSlider(), time);
+    }
+
+
+
+    function sliderButton1() {
+
+        $("#slider-2").fadeOut(400);
+        $("#slider-1").delay(200).fadeIn(400);
+        $("#sButton2").removeClass("bg-blue-800");
+        $("#sButton1").addClass("bg-blue-800");
+        reinitLoop(5000);
+        cont = 0
+
+    }
+
+    function sliderButton2() {
+        $("#slider-1").fadeOut(400);
+        $("#slider-2").delay(200).fadeIn(400);
+        $("#sButton1").removeClass("bg-blue-800");
+        $("#sButton2").addClass("bg-blue-800");
+        reinitLoop(5000);
+        cont = 1
+
+    }
+
+    $(window).ready(function () {
+    $("#slider-2").hide();
+    $("#sButton1").addClass("bg-blue-800");
+
+
+    loopSlider();
+    });
+
+
+</script>
+
+<div class="bg-gray-100 border-blue-900 border-t-4 w-full">
+    <div class="sliderAx">
+        <div id="slider-1" class="flex w-auto h-96" style="background-image: url(https://picsum.photos/id/149/1727/1144); background-size: cover; background-repeat: no-repeat; background-position: center center;">  
+            <div class="container mx-auto h-auto text-white py-12 px-10">                    
+                <p class="text-4xl font-bold mb-4">The Better Intelligence Podcast</p>
+                <p class="text-2xl mb-10 leading-none text-gray-200">FCPA Compliance and Enforcement:</p>
+                <a href="#"
+                    class="bg-transparent py-2 px-8 text-white font-bold uppercase text-xs hover:bg-gray-200 hover:text-gray-800 border-white border-2">Listen</a>
+            </div>            
+            <br>
+        </div>
+
+        <div id="slider-2" class="flex w-auto h-96" style="background-image: url(https://picsum.photos/id/122/4147/2756); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+            <div class="container mx-auto h-auto text-white py-12 px-10">                    
+                <p class="text-4xl font-bold mb-4">Corruption Risk Profile: India</p>
+                <p class="text-2xl mb-10 leading-none text-gray-200">Read PSA's newest corruption profile.</p>
+                <a href="#"
+                    class="bg-transparent py-2 px-8 text-white font-bold uppercase text-xs hover:bg-gray-200 hover:text-gray-800 border-white border-2">Learn More</a>
+            </div>  
+            <br>
+        </div>
+    </div>
+
+    <div class=" flex justify-between w-12 mx-auto pb-2 mt-2">
+        <button id="sButton1" onclick="sliderButton1()" class="bg-blue-600 rounded-full w-4 pb-2 "></button>
+        <button id="sButton2" onclick="sliderButton2() " class="bg-blue-600 rounded-full w-4 p-2"></button>
+    </div>
+
+</div>

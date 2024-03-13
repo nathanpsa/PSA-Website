@@ -1,0 +1,135 @@
+---
+---
+
+{% include header.html %}
+<div class="w-full bg-white sticky top-0 z-50">
+    {% include navbar.html %}
+</div>
+
+<main class="border-psa-300 border-t-6 border-b-6 bg-gray-50">
+    <div class="text-white h-56 md:h-64 bg-no-repeat bg-cover bg-center" style="background-image: radial-gradient( circle 1077px at -16.2% 53.5%,  rgba(132,25,137,1) 0%, rgba(83,9,88,1) 22.3%, rgba(67,18,74,1) 48.8%, rgba(18,38,111,1) 86.4%, rgba(0,53,147,1) 100.2% );">
+        <div class="container mx-auto flex h-full">
+            <h1 class="text-4xl px-3 md:px-0 md:text-5xl font-bold uppercase my-auto">{{ page.title }}</h1>
+        </div>
+    </div>
+
+    <div class="container mx-auto mt-6 px-3 md:px-0">
+        <div class="grid lg:grid-cols-12">
+            <div class="lg:col-span-9 lg:pr-14 mb-4">
+
+                {% if page.url == '/subscribe' %}
+                    <div class="px-8 py-14 mb-12 space-y-4 shadow-md bg-gray-100 mt-16">
+                        <div id="mc_embed_shell">
+                            <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+                        <style type="text/css">
+                              #mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width: 100%;}
+                              /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                                 We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                      </style>
+                      <div id="mc_embed_signup">
+                          <form action="https://psagroup.us19.list-manage.com/subscribe/post?u=06ab79792165e0a7fb818d578&amp;id=6a23af39b9&amp;f_id=00a390e4f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                              <div id="mc_embed_signup_scroll"><h2>Subscribe to download</h2>
+                                  <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                                  <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""><span id="mce-EMAIL-HELPERTEXT" class=""></span></div><div class="mc-field-group"><label for="mce-FNAME">First Name </label><input type="text" name="FNAME" class=" text" id="mce-FNAME" value=""></div><div class="mc-field-group"><label for="mce-LNAME">Last Name </label><input type="text" name="LNAME" class=" text" id="mce-LNAME" value=""></div>
+                              <div id="mce-responses" class="clear">
+                                  <div class="response" id="mce-error-response" style="display: none;"></div>
+                                  <div class="response" id="mce-success-response" style="display: none;">
+                                  </div>
+                              </div><div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_06ab79792165e0a7fb818d578_6a23af39b9" tabindex="-1" value=""></div><div class="clear"><input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe"></div>
+                          </div>
+
+                          <h1><a href="/report_download" id="skip_n_go" class="underline hidden text-sm">Skip and go to download</a></h1>
+                          <h1><a href="/report_download" id="go_to_download" class="underline hidden text-sm">Directing you to the download page...</a></h1>
+                      </form>
+                      </div>
+                      <script>
+
+
+                      </script>
+                      <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
+                    </div>
+                  {% else %}
+                    <div>
+                      <div class="px-8 py-14 mb-12 space-y-4 shadow-md bg-gray-100 mt-16">
+                        <p class="text-2xl font-bold  text-blue-900">Download our Sample Reports</p>
+                        <a href="/uploads/OSIChineseEnvironmentalServices2021.pdf" class="flex justify-between px-4 py-4 rounded-lg bg-blue-200 border border-blue-900 text-psa-400 text-lg editable">OSI on Chinese Environmental Services Company<img class="h-8" src="/assets/images/report-icon.png"></a>
+                        <a href="/uploads/EDDIndianFMCGCompany2021.pdf" class="flex justify-between px-4 py-4 rounded-lg bg-blue-200 border border-blue-900 text-psa-400 text-lg editable">EDD on Indian FMCG Company<img class="h-8" src="/assets/images/report-icon.png"></a>
+                        <a href="/uploads/EDDVietnameseTelecommunicationsCompany2020.pdf" class="flex justify-between px-4 py-4 rounded-lg bg-blue-200 border border-blue-900 text-psa-400 text-lg editable">EDD on Vietnamese Telecommunications Company<img class="h-8" src="/assets/images/report-icon.png"></a>
+                        <a href="/uploads/EDD+SConMedicalCompany2021.pdf" class="flex justify-between px-4 py-4 rounded-lg bg-blue-200 border border-blue-900 text-psa-400 text-lg editable">EDD+SC on Medical Company<img class="h-8" src="/assets/images/report-icon.png"></a>
+                        <a href="/uploads/HealthcareDD2023.pdf" class="flex justify-between px-4 py-4 rounded-lg bg-blue-200 border border-blue-900 text-psa-400 text-lg editable">Healthcare Case Studies<img class="h-8" src="/assets/images/report-icon.png"></a>
+                        <a href="/uploads/ManufacturingDD2023.pdf" class="flex justify-between px-4 py-4 rounded-lg bg-blue-200 border border-blue-900 text-psa-400 text-lg editable">Manufacturing Case Studies<img class="h-8" src="/assets/images/report-icon.png"></a>
+                      </div>
+                    </div>
+                {% endif %}
+
+            </div>
+
+            <div class="lg:col-span-3">
+                <div class="px-8 py-14 mb-12 space-y-8 shadow-md bg-psa-300 mt-16">
+                    <p class="text-2xl font-bold text-psa-50">Speak with our Experts</p>
+                    <p class="text-blue-300 text-xl">Request a proposal</p>
+                    <a href="/contact-us" class="bg-gray-50 px-2 py-4 block rounded-lg text-center text-blue-800 text-lg font-bold">Get in touch</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    {% include how_can_we_help.html %}
+</main>
+
+<script>
+var successResponseElement = document.querySelector('#mce-success-response');
+
+// 创建 MutationObserver 实例
+var successObserver = new MutationObserver(function(mutationsList) {
+  for (var mutation of mutationsList) {
+    if (mutation.attributeName === 'style') {
+      var computedStyle = window.getComputedStyle(successResponseElement);
+      var isDisplayed = (computedStyle.display === 'block');
+      if (isDisplayed) {
+        console.log('mce-success-response 元素显示为 block');
+        document.getElementById("go_to_download").style.display = "block"
+        setTimeout(function() {
+            window.location.href = '/report_download';
+        }, 5000);
+      }
+      else{
+        console.log('mce-success-response 元素显示为 block');
+        document.getElementById("go_to_download").style.display = "none"
+      }
+    }
+  }
+});
+
+// 配置并启动 MutationObserver
+successObserver.observe(successResponseElement, { attributes: true });
+
+var errorResponseElement = document.querySelector('#mce-error-response');
+
+// 创建 MutationObserver 实例
+var errorObserver = new MutationObserver(function(mutationsList) {
+  for (var mutation of mutationsList) {
+    if (mutation.attributeName === 'style') {
+      var computedStyle = window.getComputedStyle(errorResponseElement);
+      var isDisplayed = (computedStyle.display === 'block');
+      if (isDisplayed) {
+        console.log('mce-error-response 元素显示为 block');
+        document.getElementById("skip_n_go").style.display = "block"
+      }
+      else{
+        console.log('mce-error-response 元素显示为 block');
+        document.getElementById("skip_n_go").style.display = "none"
+      }
+    }
+  }
+});
+
+// 配置并启动 MutationObserver
+errorObserver.observe(errorResponseElement, { attributes: true });
+</script>
+
+{% include footer.html %}

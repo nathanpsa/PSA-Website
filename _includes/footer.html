@@ -1,0 +1,66 @@
+    <div class="container mx-auto h-auto py-6 px-4">
+        
+        <a href="{{ site.baseurl }}/">
+            <img class="h-20 mb-6" src="{{site.baseurl}}/assets/images/PSA_logo.svg" />
+        </a>
+        
+        <div class="flex flex-col sm:flex-row justify-between mt-4 space-y-2 sm:space-y-0">
+            <div>
+                <p class="text-lg">Subscribe to receive updates and insights</p>
+                <form action="https://psagroup.us19.list-manage.com/subscribe/post?u=06ab79792165e0a7fb818d578&amp;id=2014c8b935" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                    <input type="email" value="" name="EMAIL" class="border-2 border-psa-300 p-1 mt-4 w-full sm:w-auto" id="mce-EMAIL" placeholder="Email" required>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_06ab79792165e0a7fb818d578_2014c8b935" tabindex="-1" value=""></div>
+                    <input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="bg-psa-300 text-white uppercase border-2 border-psa-300 py-1 px-3 font-bold w-full sm:w-auto mt-2 sm:mt-0">
+                    </div>
+                </form>
+            </div>
+            <div class="flex flex-col">
+                <ul class="inline-flex justify-between space-x-2">
+                    <a class="text-lg hover:text-psa-300 hover:underline" href="{{ site.baseurl}}/about">About Us</a>
+                    <a class="text-lg hover:text-psa-300 hover:underline" href="{{ site.baseurl}}/due-diligence">Services</a>
+                    <a class="text-lg hover:text-psa-300 hover:underline" href="{{ site.baseurl}}/contact-us">Contact</a>
+                    <a class="text-lg hover:text-psa-300 hover:underline" href="{{ site.baseurl}}/privacy-policy">Privacy Policy</a>
+                </ul>
+                <ul class="inline-flex space-x-4 place-content-center sm:place-content-end mt-4">
+                    <li>
+                        <a href="https://www.linkedin.com/company/psagroup/">
+                            <img class="h-14" src="{{ site.baseurl }}/assets/images/footer/linkedin-badge.png"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row justify-between mt-4 pt-2 border-t space-y-2 sm:space-y-0">
+            <div class="mx-auto sm:mx-0">
+                <p class="text-gray-500">Better Intelligence Podcast</p>
+                <ul class="inline-flex space-x-4 my-4 max-h-4">
+                    <li>
+                        <a href="https://podcasts.apple.com/ph/podcast/better-intelligence-podcast/id1551280863">
+                            <img class="h-10" src="{{ site.baseurl }}/assets/images/footer/apple.png"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://open.spotify.com/show/65InJNJ548xtJzhjH9a6j9">
+                            <img class="h-10" src="{{ site.baseurl }}/assets/images/footer/spotify.png"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy80YTBiOTQyMC9wb2RjYXN0L3Jzcw==">
+                            <img class="h-10" src="{{ site.baseurl }}/assets/images/footer/google.png"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.stitcher.com/show/better-intelligence-podcast">
+                            <img class="h-10" src="{{ site.baseurl }}/assets/images/footer/stitcher.png"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p class="text-gray-500 text-center sm:text-right">Copyright © 2022 Pacific Strategies and Assessments | All Rights Reserved</p>
+        </div>
+    </div>
+    {% bookshop_live _cloudcannon/bookshop-live.js %}
+</body>
+</html>

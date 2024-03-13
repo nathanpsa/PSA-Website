@@ -1,0 +1,17 @@
+{% if include.content_blocks.size > 0 %}
+    <div class="c-page">
+
+    {% assign block_count = 0 %}
+    {% for block in include.content_blocks %}
+        {% assign c = block._bookshop_name | prepend: 'c-' %}
+        <div class="{{c}} 
+                    component-wrapper
+                    component-wrapper--light
+                    ">
+            {% bookshop {{block._bookshop_name}} bind=block %}
+        </div>
+        {% assign block_count = block_count | plus: 1 %}
+    {% endfor %}
+
+    </div>
+{% endif %}

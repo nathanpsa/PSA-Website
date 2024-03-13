@@ -1,0 +1,53 @@
+---
+layout: banner
+title: About Us
+---
+<div class="container mx-auto px-2 lg:px-0 py-3 lg:py-12">
+    <p class="editable font-light text-lg lg:text-2xl tracking-wider pb-12 lg:px-0 px-2">Pacific Strategies & Assessments is a global specialist risk consultancy, delivering critical information to our clients through our three core service lines: <a class="text-psa-200 hover:underline" href="{{ site.baseurl }}/due-diligence">Due Diligence</a>,  <a class="text-psa-200 hover:underline" href="{{ site.baseurl }}/investigations">Investigations</a>, and  <a class="text-psa-200 hover:underline" href="{{ site.baseurl }}/advisory-services">Advisory Services</a>. We operate where our clients do business, with regional offices staffed by investigators and responders who have extensive in-region experience gained from professional backgrounds in corporate investigations, government intelligence and law enforcement.</p>
+
+    {% include explore_our_services.html %}
+
+    <div class="flex flex-col lg:flex-row mb-8">
+        <h3 class="editable font-light text-2xl lg:text-4xl text-psa-300 lg:pt-36 lg:px-0 px-2 lg:mr-14 lg:w-1/2 leading-10">
+          In the past year PSA has engaged in investigative and due diligence activities in more than 150 countries on six continents.
+        </h3>
+        <img src="{{ site.baseurl }}/assets/images/psa-map.png" class="lg:w-1/2" />
+    </div>
+
+    <div class="mb-8">
+        <p class="editable text-lg lg:text-2xl tracking-wider">PSA is committed to the idea that everything we do is driven by value-added human analysis. We put findings in context and deliver insight, not just information. With offices placed throughout the globe, PSA’s team is positioned to provide insight and analysis on subjects anywhere in the world.</p>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-x-12 gap-y-3 mb-8">
+        <div class="lg:w-1/2 border-2 border-psa-200 p-4">
+            <a href="{{site.baseurl}}/leadership" class="text-xl font-light flex justify-between"><span>Meet our Experts</span><img class="h-6 link-arrow" src="assets/images/arrow.png" /></a>
+        </div>
+
+        <div class="lg:w-1/2 border-2 border-psa-200 p-4">
+            <a href="{{site.baseurl}}/our-locations" class="text-xl font-light flex justify-between"><span>Explore our Offices</span><img class="h-6 link-arrow" src="assets/images/arrow.png" /></a>
+        </div>
+    </div>
+</div>
+
+<div class="bg-gray-100 pt-6 pb-10">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-bold text-center pb-6">Featured Insights</h2>
+        <div class="grid  lg:grid-cols-3 gap-x-28 gap-y-12 px-4">
+            {% assign featured_posts = site.posts | where_exp: "post", "post.featured == true" %}
+            {% for post in featured_posts limit:3 %}
+
+                <div class="flex flex-col items-center bg-gray-200 shadow-md">
+                    <img class="object-cover object-center w-full h-44" src="{{ post.featured_image_path }}" />
+                    <div class="px-6 py-4 w-full">
+                        <a href="{{ post.url }}" class="text-xl font-semibold">{{ post.title }}</a>
+                        <p class="text-gray-600">{{ post.content | strip_html | markdownify | truncatewords: 20 }}</p>
+                        <a class="text-psa-200 text-sm font-bold" href="{{ post.url }}">LEARN MORE ></a>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% include how_can_we_help.html %}

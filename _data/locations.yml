@@ -1,0 +1,51 @@
+- name: Washington DC
+  address: 2101 L St. NW, Suite 300, Office 3075 Washington, DC 20037
+  tel:
+  image: /uploads/washington-thumb-4.jpg
+  map_embed_code: >-
+    <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d691.531239137256!2d-77.04749116218794!3d38.90407761900002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7b7109d1ed9%3A0x5aa3984893636b16!2s2101%20L%20Street!5e0!3m2!1sen!2sid!4v1675757377600!5m2!1sen!2sid"
+    width="600" height="450" style="border:0;" allowfullscreen=""
+    loading="lazy"></iframe>
+- name: Dubai
+  address: >-
+    1912 Goldcrest Executive Tower, Jumeirah Lake Towers, PO Box 112911, Dubai,
+    United Arab Emirates
+  tel:
+  image: /uploads/dubai-thumb-2.jpg
+  map_embed_code: >-
+    <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.9750731268714!2d55.13755031500695!3d25.06883398395605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6cad0c544ddf%3A0xb4536e62614a3596!2sGold%20Crest%20Executive%20-%20Cluster%20C%20-%20Jumeirah%20Lakes%20Towers%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sro!4v1648119733657!5m2!1sen!2sro"
+    width="600" height="450" style="border:0;" allowfullscreen=""
+    loading="lazy"></iframe>
+- name: Hong Kong
+  address: Unit D, 11/F World Trust Tower, 50 Stanley Street, Central, Hong Kong
+  tel:
+  image: /uploads/hong-kong-thumb-1.jpg
+  map_embed_code: >-
+    <iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7383.747011901557!2d114.155059!3d22.282781!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404007b5a985965%3A0xf5ffff7fba5a84dc!2sWorld%20Trust%20Tower%2C%2050%20Stanley%20St%2C%20Central%2C%20Hong%20Kong!5e0!3m2!1sen!2sro!4v1647295822195!5m2!1sen!2sro"
+    width="600" height="450" style="border:0;" allowfullscreen=""
+    loading="lazy"></iframe>
+- name: Manila
+  address: >-
+    Suite 6, Level 36, Tower 1, The Enterprise Center, 6766 Ayala Avenue corner
+    Paseo de Roxas, Makati City 1226, Philippines
+  tel:
+  image: /uploads/manila-thumb-1.jpg
+  map_embed_code: >-
+    <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1930.8783727811913!2d121.01996225803876!3d14.555898497457708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c90f775699df%3A0xfbc732fdfba260df!2sThe%20Enterprise%20Center%2C%20Paseo%20de%20Roxas%2C%20Legazpi%20Village%2C%20Makati%2C%20Metro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sro!4v1648119785425!5m2!1sen!2sro"
+    width="600" height="450" style="border:0;" allowfullscreen=""
+    loading="lazy"></iframe>
+- name: Shanghai
+  address: >-
+    Suite 2104, One Prime Building, 1361 Sichuan North Road, Shanghai 200080,
+    P.R.C.
+  tel:
+  image: /uploads/shanghai-thumb.jpg
+  map_embed_code: >-
+    <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.8565113239943!2d121.48136531514407!3d31.25239528145913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b271acf13a6773%3A0xb710581b58af5f22!2zT25lIFByaW1lLCDnlLLnp4Dph4wgSG9uZyBLb3UgUXUsIFNoYW5nIEhhaSBTaGksIENoaW5hLCAyMDAwODE!5e0!3m2!1sen!2sro!4v1648119767166!5m2!1sen!2sro"
+    width="600" height="450" style="border:0;" allowfullscreen=""
+    loading="lazy"></iframe>

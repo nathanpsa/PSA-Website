@@ -1,0 +1,11 @@
+<div class="{{c}}__inner-wrapper component">
+    <div class="grid md:grid-cols-{{ include.columns_number }} gap-10 mt-4 p-10 bg-white">
+        {% for section in include.sections %}
+        <div class="space-y-2">
+            <img class="h-16" src="{{ section.icon_image_path }}"/>
+            <h3 class="font-bold">{{ section.title_text }}</h3>
+            <p>{{ section.content_html }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,128 @@
+title: Pacific Strategies & Assessments
+description: "PSA is a global risk consultancy, delivering critical information through our three service lines: Due Diligence, Investigations, and Advisory Services."
+url: https://www.psagroup.com
+
+pagination:
+  enabled: true
+  debug: false
+  permalink: '/page/:num'
+  per_page: 7
+
+autopages:
+  enabled: true
+
+  categories:
+    layouts:
+     - autopage_category.html
+    enabled: true
+    permalink: '/category/:cat'
+    slugify:
+      mode: 'default'   # :cat is slugified. Modes: default, raw, pretty, ascii, latin
+      case: true       # Whether to replace all uppercase letters with their lowercase counterparts
+
+uploads_dir: uploads/:categories/:title
+
+show_excerpts: true
+excerpt_separator: "[readmore]"
+
+collections:
+  services:
+    output: true
+    permalink: /:name/
+  landing_pages:
+    output: true
+    permalink: /:name/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.babel.js
+  - LICENSE.md
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - src
+  - tailwind.config.js
+  - netlify.toml
+  - TODO
+
+
+include:
+  - _cloudcannon # This exposes the live editing data to CloudCannon
+
+# The rest of this array structure will be
+# populated by the bookshop-array-structures plugin.
+_array_structures:
+  content_blocks:
+    style: modal
+
+plugins:
+  - jekyll-paginate-v2
+  - jekyll-seo-tag
+  - jekyll-bookshop
+  - cloudcannon-jekyll-bookshop
+
+bookshop_locations:
+  - component-library
+
+cloudcannon:
+  collections:
+    services:
+      _icon: work
+      _disable_add: false
+      _enabled_editors:
+        - visual
+        - data
+        - content
+    landing_pages:
+      _icon: web
+      _disable_add: false
+      _enabled_editors:
+        - visual
+        - data
+        - content
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+      _options:
+        content: &content_defaults
+          uploads_dir: "/images/uploads/:title"
+          width: 1180
+          height: 900
+          format: p h1 h2 h3 h4 h5 h6 div
+          undo: true
+          redo: true
+          left: align-to-left
+          center: align-to-center
+          right: align-to-right
+          justify: justify
+          bold: true
+          italic: true
+          underline: true
+          strike: true
+          subscript: false
+          superscript: false
+          blockquote: true
+          table: true
+          copyformatting: true
+          removeformat: true
+          numberedlist: true
+          bulletedlist: true
+          outdent: true
+          indent: true
+          image: true
+          link: true
+          embed: true
+        content_text:
+          *content_defaults
+        content_html:
+          *content_defaults
+        text:
+          *content_defaults
+        text_html:
+          *content_defaults

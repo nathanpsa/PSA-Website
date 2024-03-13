@@ -1,0 +1,160 @@
+---
+---
+
+{% include header.html %}
+<div class="w-full bg-white sticky top-0 z-50">
+    {% include navbar.html %}
+</div>
+
+<main class="border-psa-300 border-t-6 border-b-6 bg-gray-50">
+    <div class="text-white h-56 md:h-64 bg-no-repeat bg-cover bg-center" style="background-image: radial-gradient( circle 1077px at -16.2% 53.5%,  rgba(132,25,137,1) 0%, rgba(83,9,88,1) 22.3%, rgba(67,18,74,1) 48.8%, rgba(18,38,111,1) 86.4%, rgba(0,53,147,1) 100.2% );">
+        <div class="container mx-auto flex h-full">
+            <h1 class="text-4xl px-3 md:px-0 md:text-5xl font-bold uppercase my-auto">{{ page.title }}</h1>
+        </div>
+    </div>
+
+    <div class="container mx-auto mt-6 px-3 md:px-0">
+        <div class="grid lg:grid-cols-12">
+            <div class="lg:col-span-9 lg:pr-14 mb-4">
+                <div data-bookshop-live="page" data-bookshop-props="page">
+                    {% bookshop page content_blocks=page.content_blocks %}
+                </div>
+                <div>
+                  {{ content }}
+
+                  {% if page.service_area != nil %}
+                  <div class="bg-gray-200 grid grid-cols-3 gap-x-14 px-6 py-8 my-10 border-gray-400 border-t-2 border-b-2">
+                    <div>
+                        <p class="text-4xl font-bold pl-12">Explore Other <br/>Services</p>
+                    </div>
+                    {% case page.service_area %}
+                    {% when 'due-diligence' %}
+                        {% include explore_other_services/advisory.html %}
+                        {% include explore_other_services/investigations.html %}
+                    {% when 'investigations' %}
+                        {% include explore_other_services/advisory.html %}
+                        {% include explore_other_services/due-diligence.html %}
+                    {% when 'advisory' %}
+                        {% include explore_other_services/due-diligence.html %}
+                        {% include explore_other_services/investigations.html %}
+                    {% endcase %}
+          
+                  </div>
+                  {% endif %}
+                </div>
+            </div>
+
+            <div class="lg:col-span-3">
+                <div class="px-8 py-14 mb-12 space-y-8 shadow-md bg-psa-300 mt-16">
+                    {% if page.service_area == 'due-diligence' %}
+                        <p class="text-2xl font-bold text-psa-50">Request for a Due Diligence Report</p>
+
+                        <p class="text-blue-300 text-xl">Ready to start a conversation?</p>
+                    {% else %}
+                        <p class="text-2xl font-bold text-psa-50">Speak with our Experts</p>
+
+                        <p class="text-blue-300 text-xl">Request a proposal</p>
+                    {% endif %}
+
+                    <a href="/contact-us" class="bg-gray-50 px-2 py-4 block rounded-lg text-center text-blue-800 text-lg font-bold">Get in touch</a>
+                </div>
+
+                {% if page.service_area == 'due-diligence' %}
+                <div class="px-8 py-14 mb-12 space-y-4 shadow-md bg-gray-100 mt-16">
+                    <p class="text-2xl font-bold  text-blue-900">Download our Sample Reports</p>
+
+                    <a href="/contact-us" class="flex justify-between px-4 py-4 rounded-lg bg-blue-200 border border-blue-900 text-psa-400 text-lg editable">OSI Report <img class="h-8" src="/assets/images/report-icon.png"></a>
+
+                    <a href="/contact-us" class="flex justify-between px-4 py-4 rounded-lg bg-blue-200 border border-blue-900 text-psa-400 text-lg editable">EDD Report <img class="h-8" src="/assets/images/report-icon.png"></a>
+
+                    <a href="/contact-us" class="flex justify-between px-4 py-4 rounded-lg bg-blue-200 border border-blue-900 text-psa-400 text-lg editable">EDD+ Report <img class="h-8" src="/assets/images/report-icon.png"></a>
+                </div>
+                {% endif %}
+
+
+                {% if page.banner_image %}
+                <div class="mb-12">
+                    <a href="{{ page.banner_image_url }}" target="_blank">
+                        <img src="{{ site.baseurl | append: page.banner_image }}" />
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+
+        </div>
+
+        {% assign related_insights = site.posts | where_exp: "post", "post.tags contains page.service_area" %}
+        {% if related_insights.size != 0 %}
+
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center pb-6">Related Insights</h2>
+            <div class="grid  lg:grid-cols-3 gap-x-28 gap-y-12 px-4">
+                {% for insight in related_insights limit: 3 %}
+    
+                    <div class="flex flex-col items-center bg-gray-200 shadow-md">
+                        <img class="object-cover object-center w-full h-44" src="{{ insight.featured_image_path }}"/>
+                        <div class="px-6 py-4 w-full">
+                            <a href="{{ insight.url }}" class="text-xl font-semibold">{{ insight.title }}</a>
+                            <p class="text-gray-600">{{ insight.content | strip_html | markdownify | truncatewords: 20 }}</p>
+                            <a class="text-psa-200 text-sm font-bold" href="{{ insight.url }}">LEARN MORE ></a>
+                        </div>
+                    </div>
+    
+                {% endfor %}
+            </div>
+        </div>
+        <div class="flex">
+            <a href="{{site.baseurl}}/insights" class="text-psa-300 font-normal text-base mx-auto sm:ml-auto my-6">View more</a>
+        </div>
+        {% endif %}
+    </div>
+
+    {% include how_can_we_help.html %}
+</main>
+
+<script>
+    function getFormDataString(formEl) {
+    var formData = new FormData(formEl),
+          data = [];
+    
+      for (var keyValue of formData) {
+          data.push(encodeURIComponent(keyValue[0]) + "=" + encodeURIComponent(keyValue[1]));
+      }
+    
+      return data.join("&");
+    }
+    
+    // Fetch the form element
+    var formEl = document.getElementById("contact-form");
+    
+    // Override the submit event
+    formEl.addEventListener("submit", function (e) {
+        e.preventDefault();
+    
+    //   if (grecaptcha) {
+    //       var recaptchaResponse = grecaptcha.getResponse();
+    //     if (!recaptchaResponse) { // reCAPTCHA not clicked yet
+    //       return false;
+    //     }
+    //   }
+    
+      var request = new XMLHttpRequest();
+    
+      request.addEventListener("load", function () {
+        if (request.status === 200) {
+            console.log("sent")
+            document.getElementById('contact-form').classList.add("hidden")
+            document.getElementById('form-feedback').classList.remove("hidden")
+        } else {
+            console.log(request)
+            document.getElementById('form-error-message').textContent = "There was a problem delivering your message."
+        }
+      });
+    
+      request.open(formEl.method, formEl.action);
+      request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      request.send(getFormDataString(formEl));
+    });
+</script>
+
+{% include footer.html %}

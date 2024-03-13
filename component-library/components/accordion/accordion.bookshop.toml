@@ -1,0 +1,12 @@
+[component]
+structures = ["content_blocks"]
+label = "Accordion"
+description = "Adds an accordion"
+icon = "menu"
+tags = []
+
+[props]
+
+[[props.tabs]]
+title_text = "What types of payment do you accept?"
+content_html = "Credit cards including MasterCard, Visa or American Express."

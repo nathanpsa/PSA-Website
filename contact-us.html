@@ -1,0 +1,140 @@
+---
+layout: banner
+title: Contact us
+recaptcha: true
+---
+
+<div class="flex flex-col px-2 md:px-0 md:flex-row container mx-auto py-12">
+    <div class="md:w-9/12 md:pr-12">
+        <p class="text-xl">Thank you for your interest in Pacific Strategies and Assessments.</p>
+        <p class="text-xl">Please fill out the form below to send your inquiries.</p>
+
+        <div id="form-feedback" class="mt-8 hidden">
+            <h2 class="text-3xl text-psa-300 font-bold">Thank you!</h2>
+            <p class="text-xl">Your message was sent successfully.</p>
+        </div>
+
+        <form id="contact-form" method="post" action="" class="mt-4 md:w-5/6">
+            <label class="block">
+                <span>Name *</span>
+                <input type="text" class="mt-2 block w-full" name="name" required="required"/>
+            </label>
+
+            <label class="block">
+                <span>Email *</span>
+                <input type="text" class="mt-2 block w-full required" name="email" required="required" />
+            </label>
+
+            <label class="block">
+                <span>Company *</span>
+                <input type="text" class="mt-2 block w-full required" name="company" required="required" />
+            </label>
+            
+            <label class="block">
+                <span>Area of Concern/Interest</span>
+                <select class="w-full mt-2 block" name="_subject">
+                    <option value="[Contact Form] "></option>
+                    <option value="[Contact Form] General Inquiry">General Inquiry</option>
+                    <option value="[Contact Form] Due Diligence Services">Due Diligence Services</option>
+                    <option value="[Contact Form] Investigation Services">Investigation Services</option>
+                    <option value="[Contact Form] Advisory Services Services">Advisory Services</option>
+                    <option value="[Contact Form] Request for Proposal (RFP)">Request for Proposal (RFP)</option>
+                    <option value="[Contact Form] Feedback">Feedback</option>
+                    <option value="[Contact Form] Careers">Careers</option>
+                    <option value="[Contact Form] Other">Other</option>
+                </select>
+            </label>
+
+            <label class="block">
+                <span>How can we help? *</span>
+                <textarea class="w-full h-44 block mt-2 required" name="message" value="" aria-required="true" required="required"></textarea>
+            </label>
+
+            <input type="hidden" name="_to" value="bizdev@psagroup.com">
+            <input type="text" name="_gotcha" class="hidden">
+
+            <div class="g-recaptcha mt-2" data-sitekey="6LfY1X4eAAAAALOvmlNb9U-QUq9rXIi-wmwHefN6"></div>
+
+            <p class="my-8 text-sm">Pacific Strategies & Assessments is committed to protecting your information. Data collected will be used in accordance with the applicable data privacy law and our <a href="/privacy-policy" class="text-psa-200" target="_blank">privacy policy</a>. If you have questions or concerns regarding PSA’s personal data processing policies, please contact us at: <a class="text-psa-200" href="mailto:info@psagroup.com">info@psagroup.com</a></p>
+
+            <input type="submit" class="mt-2 w-full md:w-auto px-2 py-1 text-white bg-psa-200 hover:bg-psa-300" value="Submit" />
+        </form>
+
+        <span id="form-error-message" class="inline-block mt-4"></span>
+    </div>
+
+    <div class="md:w-3/12 space-y-4">
+        <div class="py-6 px-14 border-8 space-y-6 flex flex-col">
+            {% assign first_location = site.data.locations.first %}
+            <p class="text-4xl text-psa-400 font-bold ">
+                Our Offices
+            </p>
+
+            <p class="text-psa-300 font-bold text-2xl">{{ first_location.name }}</p>
+            <p><span class="font-bold">Address:</span> {{ first_location.address }}</p>
+            {% if first_location.tel != nil %}
+            <p><span class="font-bold">Telephone:</span> {{ first_location.tel }}</p>
+            {% endif %}
+
+            <a href="/our-locations" class="border-2 border-psa-300 px-3 py-2 rounded-lg bg-psa-300 text-white text-center place-self-center">View More Locations</a>
+        </div>
+
+        <div class="text-white font-semibold h-60 bg-cover px-8 pt-20 pb-4" style="background-image: url('/assets/images/about_us_bg.jpg');">
+            <p class="text-lg">Learn more</p>
+            <p class="text-4xl">About us</p>
+            <a href="/about" class="bg-psa-200 px-4 py-3 mt-2 inline-block">→</a>
+        </div>
+
+        <div class="text-white font-semibold h-60 bg-cover px-8 pt-20 pb-4" style="background-image: url('/assets/images/meet_experts_bg.jpg');">
+            <p class="text-lg">Meet our</p>
+            <p class="text-4xl">Experts</p>
+            <a href="/leadership" class="bg-psa-200 px-4 py-3 mt-2 inline-block">→</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function getFormDataString(formEl) {
+var formData = new FormData(formEl),
+      data = [];
+
+  for (var keyValue of formData) {
+      data.push(encodeURIComponent(keyValue[0]) + "=" + encodeURIComponent(keyValue[1]));
+  }
+
+  return data.join("&");
+}
+
+// Fetch the form element
+var formEl = document.getElementById("contact-form");
+
+// Override the submit event
+formEl.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+  if (grecaptcha) {
+      var recaptchaResponse = grecaptcha.getResponse();
+    if (!recaptchaResponse) { // reCAPTCHA not clicked yet
+      return false;
+    }
+  }
+
+  var request = new XMLHttpRequest();
+
+  request.addEventListener("load", function () {
+    if (request.status === 200) {
+        console.log("sent")
+        document.getElementById('contact-form').classList.add("hidden")
+        document.getElementById('form-feedback').classList.remove("hidden")
+    } else {
+        console.log(request)
+        document.getElementById('form-error-message').textContent = "There was a problem delivering your message."
+    }
+  });
+
+  request.open(formEl.method, formEl.action);
+  request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  request.send(getFormDataString(formEl));
+});
+</script>

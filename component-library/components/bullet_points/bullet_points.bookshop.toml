@@ -1,0 +1,13 @@
+[component]
+structures = ["content_blocks"]
+label = "Bullet Points"
+description = "Adds a bullet point list"
+icon = "list"
+tags = []
+
+[props]
+list_type.select = ["list-disc", "list-decimal"]
+list_position.select = ["list-inside", "list-outside"]
+
+[[props.list_items]]
+content_html = "List item text goes here"

@@ -1,0 +1,12 @@
+[component]
+structures = ["content_blocks"]
+label = "Image"
+description = "Image component"
+icon = "image"
+tags = ["Text"]
+
+[props]
+image_path = ""
+width.select = ["1/2", "1/3", "1/4", "1/5"]
+position.select = ["start", "center", "end"]
+position.default = "start"

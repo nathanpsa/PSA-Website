@@ -1,0 +1,14 @@
+[component]
+structures = ["content_blocks"]
+label = "Text with icons grid"
+description = "Adds a grid with "
+icon = "grid view"
+tags = []
+
+[props]
+columns_number = 2
+
+[[props.sections]]
+title_text = "Title goes here"
+content_html = "Content goes here"
+icon_image_path = ""

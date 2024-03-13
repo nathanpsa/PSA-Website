@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.c-accordion__inner-wrapper ul > li {
+    list-style-image: url('/assets/images/bullet.webp');
+    @apply ml-5;
+}
+
+.c-accordion__inner-wrapper ol > li {
+    list-style-type: decimal;
+    @apply list-inside;
+}
+
+.c-content__inner-wrapper a {
+  @apply text-psa-200 hover:underline;
+}
+
+a.link-arrow {
+  display: flex;
+  background: url('/assets/images/arrow.png');
+  background-size: 1.5rem;
+  background-repeat: no-repeat;
+}
+
+a.link-arrow:hover {
+  background: url('/assets/images/arrow-hover.png');
+  background-size: 1.5rem;
+  background-repeat: no-repeat;
+}
+
+img.link-arrow {
+  display: flex;
+  background: url('/assets/images/arrow.png');
+  background-size: 1.5rem;
+  background-repeat: no-repeat;
+}
+
+img.link-arrow:hover {
+  background: url('/assets/images/arrow-hover.png');
+  background-size: 1.5rem;
+  background-repeat: no-repeat;
+}

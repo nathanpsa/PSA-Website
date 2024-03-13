@@ -1,0 +1,95 @@
+---
+---
+
+{% include header.html %}
+{% include navbar.html %}
+
+<style>
+  .fa-stack:hover .fa-circle {
+    color:black
+  }
+</style>
+
+<main class="bg-white w-full border-psa-300 border-t-6">
+  <div class=" text-white h-96 flex flex-col bg-no-repeat bg-cover px-3 md:px-0" style="background-image: url('{{ site.baseurl}}/assets/images/podcast-banner.jpg');">
+    <div class="container mx-auto my-auto space-y-3 md:space-y-6">
+        <span class="text-2xl font-normal block text-psa-500">Better Intelligence Podcast</span>
+        <h1 class="text-4xl md:text-5xl font-bold uppercase my-auto">{{ page.title }}</h1>
+        <span class="text-lg font-light text-white inline-block p-1 bg-psa-500">EPISODE {{ page.episode_nr }}</span>
+
+        <p class="font-bold mt-10">Subscribe:</p>
+        <div class="flex md:space-x-12 space-y-1 flex-col sm:flex-row">
+          <a href="https://podcasts.apple.com/ph/podcast/better-intelligence-podcast/id1551280863" class="flex hover:underline items-center space-x-2">
+            <img class="h-6" src="{{ site.baseurl }}/assets/images/podcast-layout/apple.png" /><span>Apple Podcasts</span>
+          </a>
+          <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy80YTBiOTQyMC9wb2RjYXN0L3Jzcw==" class="flex hover:underline items-center space-x-2">
+            <img class="h-6" src="{{ site.baseurl }}/assets/images/podcast-layout/google.png" /><span>Google Podcasts</span>
+          </a>
+          <a href="https://open.spotify.com/show/65InJNJ548xtJzhjH9a6j9" class="flex hover:underline items-center space-x-2">
+            <img class="h-6" src="{{ site.baseurl }}/assets/images/podcast-layout/spotify.png" /><span>Spotify</span>
+          </a>
+          <a href="https://www.stitcher.com/show/better-intelligence-podcast" class="flex hover:underline items-center space-x-2">
+            <img class="h-6" src="{{ site.baseurl }}/assets/images/podcast-layout/stitcher.png" /><span>Stitcher</span>
+          </a>
+        </div>
+
+    </div>
+  </div>
+
+  <div class="container px-4 mx-auto mb-6">
+
+    <div class="grid grid-cols-3 gap-x-8 gap-y-6 pt-12">
+      <div class="md:col-span-2 col-span-3 content-center leading-8">
+        <iframe class="w-full mb-4" src="{{ page.anchorfm_url }}" frameborder="0" scrolling="no"></iframe>
+        {{ content }}
+      </div>
+
+      <div class="md:col-span-1 col-span-3 md:px-6 space-y-3">
+        <div class="mb-3" id="share">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ page.title }}&summary=&source=" class="">
+            <span class="fa-stack fa-lg">
+              <i class="fa-solid fa-circle fa-stack-2x text-psa-300"></i>
+              <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <a href="https://twitter.com/intent/tweet?text={{ page.url | absolute_url }}" class="">
+            <span class="fa-stack fa-lg">
+              <i class="fa-solid fa-circle fa-stack-2x text-psa-300"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" class="">
+            <span class="fa-stack fa-lg">
+              <i class="fa-solid fa-circle fa-stack-2x text-psa-300"></i>
+              <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <a href="mailto:?subject={{ page.title }}&body={{ page.url | absolute_url }} " class="">
+            <span class="fa-stack fa-lg">
+              <i class="fa-solid fa-circle fa-stack-2x text-psa-300"></i>
+              <i class="fa-solid fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </div>
+        <span class="text-black font-bold">Latest in this series</span>
+        <hr/>
+        {% assign podcasts = site.posts | where_exp: "post", "post.categories contains 'podcast'" %}
+        
+          {% for podcast in podcasts limit: 3 %}
+          <div class="">
+            <span class="block text-psa-400">Episode #{{ podcast.episode_nr }}</span>
+            <a href="{{podcast.url}}" class="font-bold">{{ podcast.title }}</a>
+          </div>
+          {% endfor %}
+
+        <hr/>
+
+        <a href="{{ site.base_url }}/category/podcast/" class="font-bold mt-3 block text-right">All Episodes ></a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+{% include how_can_we_help.html %}
+{% include footer.html %}

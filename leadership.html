@@ -1,0 +1,69 @@
+---
+layout: banner
+title: Our Leadership Team
+---
+
+<div class="container mx-auto">
+
+    <section class="py-12 mx-auto space-y-8 sm:py-20">
+        {% assign first_slug_id = site.data.leadership_team.first.name | slugify %}
+        <div class="container flex flex-row items-stretch justify-center w-full max-w-6xl space-x-12" x-data="{tab: window.location.hash ? window.location.hash.substring(1) : '{{ first_slug_id }}' }">
+            <div class="flex flex-col justify-start w-1/4 space-y-4">
+                {% for person in site.data.leadership_team %}
+                {% assign slug_id = person.name | slugify %}
+                <a class="px-4 py-2 text-psa-200" :class="{'z-20 border-l-2 transform translate-x-2 border-blue-500 font-bold': tab === '{{ slug_id }}', ' transform -translate-x-2': tab !== '{{ slug_id }}'}" href="#" @click.prevent="tab = '{{ slug_id }}'; window.location.hash = '{{ slug_id }}'">
+                    {{ person.name }} 
+                </a>
+                {% endfor %}
+            </div>
+            <div class="w-3/4">
+                {% for person in site.data.leadership_team %}
+                {% assign slug_id = person.name | slugify %}
+
+                    <div class="space-y-4" x-show="tab === '{{ slug_id }}'">
+                        {% if person.profile_image != '' %}
+                        <img src="{{ site.basurl | append: person.profile_image }}" class="max-h-32" />
+                        {% endif %}
+    
+                        <h3 class="text-2xl text-psa-200 font-bold leading-tight" x-show="tab === '{{ slug_id }}'" x-transition:enter="transition duration-500 transform ease-in" x-transition:enter-start="opacity-0">
+                            {{ person.name }}
+                        </h3>
+                        <p class="text-base text-psa-300 font-light" x-show="tab === '{{ slug_id }}'" x-transition:enter="transition delay-100 duration-500 transform ease-in" x-transition:enter-start="opacity-0">
+                            {{ person.title }}
+                        </p>
+                        <p class="text-base" x-show="tab === '{{ slug_id }}'" x-transition:enter="transition delay-200 duration-500 transform ease-in" x-transition:enter-start="opacity-0">
+                            {{ person.description_html}}
+                        </p>
+
+                        <div class="text-sm space-y-2" x-show="tab === '{{ slug_id }}'" x-transition:enter="transition delay-300 duration-500 transform ease-in" x-transition:enter-start="opacity-0">
+                            <p class="text-base font-bold text-psa-300">CONTACT INFORMATION</p>
+
+                            {% if person.phone != nil %}
+                            <div>
+                                <p class="font-semibold">Phone</p>
+                                <a href="tel:{{ person.phone }}" class="text-psa-200 hover:underline">{{ person.phone }}</a>
+                            </div>
+                            {% endif %}
+
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <a href="mailto:{{ person.email }}"  class="text-psa-200 hover:underline">{{ person.email }}</a>
+                            </div>
+
+                            {% if person.linkedin_url %}
+                                <a href="{{ person.linkedin_url }}" class="font-bold text-psa-300 hover:underline block" target="_blank">Connect on LinkedIn →</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {% include explore_our_services.html %}
+
+</div>
+
+{% include featured_insights.html %}
+
+{% include how_can_we_help.html %}

@@ -1,0 +1,15 @@
+[component]
+structures = ["content_blocks"]
+label = "Divider"
+description = "A horizontal divider/line"
+icon = "horizontal rule"
+tags = ["Text"]
+
+[props]
+display_divider = true
+
+margin_top.select = ["mt-1", "mt-2", "mt-3", "mt-4", "mt-5", "mt-6", "mt-7", "mt-8", "mt-9", "mt-10"]
+margin_top.default = "mt-4"
+
+margin_bottom.select = ["mb-1", "mb-2", "mb-3", "mb-4", "mb-5", "mb-6", "mb-7", "mb-8", "mb-9", "mb-10"]
+margin_bottom.default = "mb-4"

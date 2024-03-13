@@ -1,0 +1,11 @@
+.c-accordion__inner-wrapper {
+    ul > li {
+        list-style-image: url('/assets/images/bullet.webp');
+        @apply ml-5;
+    }
+
+    ol > li {
+        list-style-type: decimal;
+        @apply ml-5;
+    }
+}

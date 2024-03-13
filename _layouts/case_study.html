@@ -1,0 +1,162 @@
+---
+---
+
+{% include header.html %}
+<div class="w-full bg-white sticky top-0 z-50">
+  {% include navbar.html %}
+</div>
+
+<style>
+  .fa-stack:hover .fa-circle {
+    color:black
+  }
+
+  #post-content ul {
+    padding-top: 1em;
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
+  #post-content p {
+    padding-top: 1em;
+  }
+</style>
+<main class="bg-white w-full border-psa-300 border-t-6">
+  <div class="bg-psa-100 text-white h-72">
+    <div class="container mx-auto h-full flex flex-col-reverse md:flex-row">
+        <div class="md:w-1/2 my-auto">
+          <h1 class="text-3xl md:text-5xl p-3 md:p-0 font-bold my-auto">{{ page.title }}</h1>
+        </div>
+        <div class="md:w-1/2">
+          <img class="h-full w-full max-h-80 object-cover" src="{{ page.featured_image_path }}"/>
+        </div>
+    </div>
+  </div>
+
+  <div class="container px-3 lg:px-0 mx-auto">
+
+    <div class="grid grid-cols-12 gap-y-6 pt-12">
+      <div id="post-content" class="md:col-span-9 col-span-12 content-center leading-8 lg:pr-14">
+        {{ content }}
+        {% if page.whitepaper_document_path %}
+          <a href="{{ page.whitepaper_document_path }}" class="white_papar_link bg-psa-300 inline-block px-2 mt-4 text-white">Download Case Study</a>
+        {% endif %}
+
+        <div class="bg-gray-200 grid grid-cols-1 xl:grid-cols-4 gap-x-6 px-4 py-6 my-10 border-gray-400 border-t-2 border-b-2">
+          <div class="">
+              <p class="text-3xl font-bold pl-6 xl:text-left text-center">Explore our<br/> Services</p>
+          </div>
+
+          <div class="space-y-4 flex flex-col">
+              <p class="font-bold text-xl">Due Diligence</p>
+              <p class="font-light flex-grow leading-6">PSA offers a broad range of due diligence services that are tailored to our clients’ needs and informed by regulatory requirements and relevant guidance.</p>
+              <a href="#" class="h-6 link-arrow"></a>
+          </div>
+
+          <div class="space-y-4 flex flex-col">
+              <p class="font-bold text-xl">Investigations</p>
+              <p class="font-light flex-grow leading-6">PSA has conducted corporate investigations into issues of embezzlement, fraud, corruption and other misconduct in over 50 countries.</p>
+              <a href="#" class="h-6 link-arrow"></a>
+          </div>
+
+          <div class="space-y-4 flex flex-col">
+              <p class="font-bold text-xl">Advisory</p>
+              <p class="font-light flex-grow leading-6">PSA provides strategic guidance to firms beyond routine due diligence, crisis-response investigation or market entry advisory services.</p>
+              <a href="#" class="h-6 link-arrow"></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="md:col-span-3 col-span-12 leading-8 space-y-6">
+        <div class="" id="share">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ page.title }}&summary=&source=" class="">
+            <span class="fa-stack fa-lg">
+              <i class="fa-solid fa-circle fa-stack-2x text-psa-300"></i>
+              <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <a href="https://twitter.com/intent/tweet?text={{ page.url | absolute_url }}" class="">
+            <span class="fa-stack fa-lg">
+              <i class="fa-solid fa-circle fa-stack-2x text-psa-300"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" class="">
+            <span class="fa-stack fa-lg">
+              <i class="fa-solid fa-circle fa-stack-2x text-psa-300"></i>
+              <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <a href="mailto:?subject={{ page.title }}&body={{ page.url | absolute_url }} " class="">
+            <span class="fa-stack fa-lg">
+              <i class="fa-solid fa-circle fa-stack-2x text-psa-300"></i>
+              <i class="fa-solid fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <a href="" class="" onclick="window.print();return false;" > 
+            <span class="fa-stack fa-lg">
+              <i class="fa-solid fa-circle fa-stack-2x text-psa-300"></i>
+              <i class="fa-solid fa-print fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <a href="{{ page.whitepaper_document_path }}" class="">
+            <span class="fa-stack fa-lg">
+              <i class="fa-solid fa-circle fa-stack-2x text-psa-300"></i>
+              <i class="fa-solid fa-download fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </div>
+
+        <div class="px-8 py-14 mb-12 space-y-8 shadow-md bg-psa-300 mt-16">
+          {% if page.cta_title %}
+            <p class="text-2xl font-bold text-psa-50">{{ page.cta_title }}</p>
+            <p class="text-blue-300 text-xl">{{ page.cta_text }}</p>
+
+            <a href="{{ page.cta_button_link }}" class="bg-gray-50 px-2 py-4 block rounded-lg text-center text-blue-800 text-lg font-bold">{{ page.cta_button_title }}</a>
+          {% else %}
+            <p class="text-2xl font-bold text-psa-50">Request for a Due Diligence Report</p>
+            <p class="text-blue-300 text-xl">Ready to start a conversation?</p>
+
+            <a href="/contact-us" class="bg-gray-50 px-2 py-4 block rounded-lg text-center text-blue-800 text-lg font-bold">Get in touch</a>
+          {% endif %}
+        </div>
+
+        {% if page.booklet_image_path %}
+        <div class="px-6 py-12 space-y-4 flex flex-col items-center">
+          <img class="pb-2" src="{{ page.booklet_image_path }}">
+          <a class="text-psa-300 text-xl underline flex" href="{{ page.whitepaper_document_path }}">
+            Download Report
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-psa-300">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25" />
+            </svg>
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+</div>
+  
+</main>
+<div class="bg-gray-100 pt-6 pb-10">
+  <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center pb-6">Featured Insights</h2>
+      <div class="grid  lg:grid-cols-3 gap-x-28 gap-y-12 px-4">
+          {% assign featured_posts = site.posts | where_exp: "post", "post.featured == true" %}
+          {% for post in featured_posts limit:3 %}
+
+              <div class="flex flex-col items-center bg-gray-200 shadow-md">
+                  <img class="object-cover object-center w-full h-44" src="{{ post.featured_image_path }}"/>
+                  <div class="px-6 py-4 w-full">
+                      <a href="{{ post.url }}" class="text-xl font-semibold">{{ post.title }}</a>
+                      <p class="text-gray-600">{{ post.content | strip_html | markdownify | truncatewords: 20 }}</p>
+                      <a class="text-psa-200 text-sm font-bold" href="{{ post.url }}">LEARN MORE ></a>
+                  </div>
+              </div>
+
+          {% endfor %}
+      </div>
+  </div>
+</div>
+{% include how_can_we_help.html %}
+{% include footer.html %}

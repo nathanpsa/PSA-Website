@@ -1,0 +1,7 @@
+<div class="{{c}}__inner-wrapper component">
+  <ul class="{{ include.list_type }} {{ include.list_position }} mt-2">
+  {% for item in include.list_items %}
+    <li style="list-style-image: url('{{site.baseurl}}/assets/images/bullet.webp')" class="ml-5">{{ item.content_html }}</li>
+  {% endfor %}
+  </ul>
+</div>

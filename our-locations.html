@@ -1,0 +1,85 @@
+---
+layout: banner
+title: Our Locations
+---
+
+<div class="container mx-auto pb-8 px-2">
+    <p class="editable font-light text-2xl tracking-wider py-12 md:px-0 px-2 border-b-2">PSA operates where our clients do business, with regional offices staffed by investigators and responders who have extensive in-region experience, explore our offices below.</p>
+
+    <section class="py-6 mx-auto space-y-8 sm:py-6">
+        {% assign first_slug_id = site.data.locations.first.name | slugify %}
+        <div class="container w-full" x-data="{tab: window.location.hash ? window.location.hash.substring(1) : '{{ first_slug_id }}' }">
+            <div id="locations">
+
+                    <div class="space-y-4 flex">
+                        <div class="w-1/2 pl-6 pt-2 space-y-4">
+                            {% for location in site.data.locations %}
+                            {% assign slug_id = location.name | slugify %}
+                                <div class="flex flex-col ml-2 p-2">
+                                    <h2 class="flex justify-between text-3xl space-x-4 border-b-2 cursor-pointer" :class="{'transform text-psa-300 font-bold': tab === '{{ slug_id }}', ' transform ': tab !== '{{ slug_id }}'}" href="#" @click.prevent="tab = '{{ slug_id }}'; window.location.hash = '{{ slug_id }}'">
+                                        {{ location.name }}
+
+                                        <svg x-show="tab === '{{ slug_id }}'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                        
+                                        <svg x-show="tab !== '{{ slug_id }}'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-psa-300">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                        </svg>
+                                    </h2>
+                                    
+                                    <span class="text-psa-400 text-lg" x-show="tab === '{{ slug_id }}'">{{location.address}}</span>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="w-1/2 pl-4 pb-4">
+                            {% for location in site.data.locations %}
+                                {% assign slug_id = location.name | slugify %}
+                                <div  x-show="tab === '{{ slug_id }}'" x-transition:enter="transition duration-500 transform ease-in" x-transition:enter-start="opacity-0">
+                                    {{ location.map_embed_code }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-2">
+                
+            </div>
+        </div>
+    </section>
+
+    <div class="relative flex py-5 items-center">
+        <div class="flex-grow border-t border-gray-400"></div>
+        <span class="flex-shrink mx-4 text-psa-400 text-3xl">More About PSA</span>
+        <div class="flex-grow border-t border-gray-400"></div>
+    </div>
+
+    <div class="grid grid-cols-4 gap-x-14 px-6 py-8 mb-10 border-gray-400">
+        <div class="flex flex-col space-y-4">
+            <p class="editable font-bold text-xl">About Us</p>
+            <p class="editable font-light flex-grow">We are a global risk consultancy, delivering critical information to our clients.</p>
+            <a href="/about" class="editable h-6 link-arrow"></a>
+        </div>
+    
+        <div class="flex flex-col space-y-4">
+            <p class="editable font-bold text-xl">Our Experts</p>
+            <p class="editable font-light flex-grow">Our multi-disciplined experts have extensive background and deep experience gained from professional backgrounds in various fields.</p>
+            <a href="/leadership" class="editable h-6 link-arrow inset-x-0 bottom-0 "></a>
+        </div>
+    
+        <div class="flex flex-col space-y-4">
+            <p class="editable font-bold text-xl">Our Services</p>
+            <p class="editable font-light flex-grow">We deliver critical information through our three core service lines.</p>
+            <a href="/due-diligence" class="editable h-6 link-arrow inset-x-0 bottom-0 "></a>
+        </div>
+    
+        <div class="flex flex-col space-y-4">
+            <p class="editable font-bold text-xl">Our Insights</p>
+            <p class="editable font-light flex-grow">Coverage of the latest issues in risk and compliance from PSA’s experts.</p>
+            <a href="/insights" class="editable h-6 link-arrow inset-x-0 bottom-0 "></a>
+        </div>
+    </div>
+</div>
+
+{% include how_can_we_help.html %}

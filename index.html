@@ -1,0 +1,101 @@
+---
+layout: default
+banner_image: /assets/images/homepage-banner-min.jpg
+_inputs:
+  banner_image:
+    type: image
+    comment: Main banner image
+---
+
+<!-- Slider main container -->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        {% for slide in site.data.slides %}
+        <div class="swiper-slide border-psa-300 border-t-4 w-full bg-no-repeat bg-center bg-cover" style="background-image: url('{{ slide.background_image }}');">
+            <div class="container mx-auto h-80 pt-6">
+                <div class="px-4 lg:w-1/2">
+                    <h1 class="text-4xl sm:text-5xl font-bold text-white">{{ slide.heading }}</h1>
+                    <h2 class="text-xl sm:text-2xl text-white my-4 block">{{ slide.paragraph }}</h2>
+                    {% if slide.button_link != nil %}
+                        <a class="bg-transparent py-2 px-8 text-white text-lg font-bold uppercase hover:bg-psa-200 hover:border-psa-200 border-white border-2 inline-block" href="{{ slide.button_link }}">{{ slide.button_text }}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+
+{% include our_services.html %}
+
+<div class="container mx-auto py-12">
+    <h2 class="text-4xl font-bold text-center pb-6">Find out more</h2>
+    <div class="mx-auto grid lg:grid-cols-3 gap-x-28 gap-y-12 px-4">
+        {% include homepage/find_out_more_item.html 
+            title="About PSA"
+            icon="about-us"
+            description="We are a global risk consultancy, delivering critical information to our clients."
+            cta_url = "/about"
+            cta_text = "Learn More" %}
+
+        {% include homepage/find_out_more_item.html 
+            title="Insights" 
+            icon="insights" 
+            description="Coverage of the latest issues in risk and compliance from PSA’s experts."
+            cta_url = "/insights"
+            cta_text = "Explore Here" %}
+
+        {% include homepage/find_out_more_item.html 
+            title="Contact Us" 
+            icon="contact-us" 
+            description="Reach out to a due diligence, investigations, or advisory consultant."
+            cta_url = "/contact-us"
+            cta_text = "Get in touch" %}
+    </div>
+</div>
+
+<div class="bg-gray-100 pt-6 pb-10">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-bold text-center pb-6">Featured Insights</h2>
+        <div class="grid  lg:grid-cols-3 gap-x-28 gap-y-12 px-4">
+            {% assign featured_posts = site.posts | where_exp: "post", "post.featured == true" %}
+            {% for post in featured_posts limit:3 %}
+
+                <div class="flex flex-col items-center bg-gray-200 shadow-md">
+                    <img class="object-cover object-center w-full h-44" src="{{ post.featured_image_path }}"/>
+                    <div class="px-6 py-4 w-full">
+                        <a href="{{ post.url }}" class="text-xl font-semibold">{{ post.title }}</a>
+                        <p class="text-gray-600">{{ post.content | strip_html | markdownify | truncatewords: 20 }}</p>
+                        <a class="text-psa-200 text-sm font-bold" href="{{ post.url }}">LEARN MORE ></a>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% include how_can_we_help.html %}
+
+
+<script>
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    autoplay: {
+        delay: 5000,
+    },
+
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+    }
+});
+</script>

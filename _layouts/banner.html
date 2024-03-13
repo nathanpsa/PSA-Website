@@ -1,0 +1,27 @@
+---
+---
+
+{% include header.html %}
+<div class="w-full bg-white sticky top-0 z-50">
+    {% include navbar.html %}
+</div>
+
+<main class="border-psa-300 border-t-6 border-b-6">
+  <div class="text-white h-48 md:h-56 bg-no-repeat bg-left bg-cover" style="background-image: radial-gradient( circle 1077px at -16.2% 53.5%,  rgba(132,25,137,1) 0%, rgba(83,9,88,1) 22.3%, rgba(67,18,74,1) 48.8%, rgba(18,38,111,1) 86.4%, rgba(0,53,147,1) 100.2% );"> 
+        <div class="container mx-auto flex h-full">
+            <h1 class="text-4xl md:text-5xl px-3 md:px-0 font-bold my-auto">
+                {% if page.autopages['display_name'] == 'podcast' %}
+                    Better Intelligence Podcast
+                {% elsif page.autopages['display_name'] %}
+                    {{ page.autopages['display_name'] | capitalize }}
+                {% else %}
+                    {{ page.title }}
+                {% endif %}
+            </h1>
+        </div>
+    </div>
+
+    {{ content }}
+</main>
+
+{% include footer.html %}

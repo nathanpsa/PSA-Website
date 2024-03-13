@@ -1,0 +1,94 @@
+---
+layout: banner
+title: Our Insights
+permalink: insights
+
+pagination:
+    enabled: true
+    permalink: ':num/'
+    title: :title
+    sort_reverse: true
+---
+
+<div class="container mx-auto py-6 px-3 md:px-0">
+    {% assign podcast_featured= site.baseurl | append: '/assets/images/podcast-thumb.jpg' %}
+    <div class="grid grid-cols-12 gap-x-4">
+        <div class="col-span-12 sm:col-span-9 lg:pr-14">
+        {% for post in paginator.posts %}
+
+            <div class="flex flex-col sm:flex-row space-x-4 mb-4">
+                <div class="sm:w-2/5">
+                    <a href="{{ post.url }}">
+                        <img class="h-48 w-full object-cover" src="{{ post.featured_image_path }}">
+                    </a>
+                </div>
+                <div class="sm:w-3/5 flex flex-col">
+                    <a href="{{ site.baseurl }}/category/{{ post.category | slugify }}/"><span class="text-psa-200">{{ post.category | capitalize }}</span></a>
+                    <a href="{{ post.url }}"" class="text-psa-300 text-xl font-bold hover:underline">{{ post.title }}</a>
+                    <p>{{ post.content|  markdownify | strip_html | markdownify | truncatewords: 50 }}</p>
+                    <a href="{{ post.url }}" class="text-psa-300">Read more ></a>
+                </div>
+            </div>
+
+        {% endfor %}
+
+        {% if paginator.total_pages > 1 %}
+        <p class="text-center space-x-4">
+            {% if paginator.previous_page %}
+                <a class="hover:underline" href="{{site.baseurl}}/{{ paginator.previous_page_path }}">&larr; Newer</a>
+            {% endif %}
+            {% if paginator.next_page %}
+                <a class="hover:underline" href="{{ site.baseurl }}/{{paginator.next_page_path }}">Older &rarr;</a>
+            {% endif %}
+        </p>
+        {% endif %}
+        </div>
+
+        <div class="col-span-12 sm:col-span-3 space-y-8 border-t-2 border-black">
+            <span class="block mt-6 text-lg tracking-wide">MOST POPULAR INSIGHTS</span>
+
+            <ol class="list-decimal list-outside space-y-4 pl-4">
+                {% for popular_insight in site.data.popular_insights %}
+                    {% assign insight = site.posts | find: "title", popular_insight.title %}
+                    <li class="font-semibold"><a href="{{insight.url}}">{{ insight.title }}</a></li>
+                {% endfor %}
+            </ol>
+
+            <div class="bg-gray-200 grid grid-cols-1 gap-y-8 px-12 py-6 my-10 border-gray-400 border-t-2 border-b-2">
+                <div class="">
+                    <p class="text-3xl lg:text-4xl xl:text-5xl font-bold">Explore our<br/> Services</p>
+                </div>
+
+                <div class="space-y-4 border-b border-psa-400 pb-8">
+                    <p class="font-bold text-xl">Due Diligence</p>
+                    <p class="font-light flex-grow leading-6">Due diligence services that deliver more than information</p>
+                    <a href="{{site.baseurl}}/due-diligence" class="flex text-lg text-psa-300 group"><span class="group-hover:underline">Learn more</span><img class="h-6 ml-2 link-arrow group-hover:underline" src="/assets/images/arrow.png"></a>
+                </div>
+
+                <div class="space-y-4 border-b border-psa-400 pb-8">
+                    <p class="font-bold text-xl">Investigations</p>
+                    <p class="font-light flex-grow leading-6">Identify and manage adverse situations lead by cross-border investigative expertise</p>
+                    <a href="{{site.baseurl}}/investigations" class="flex text-lg text-psa-300 group"><span class="group-hover:underline">Learn more</span><img class="h-6 ml-2 link-arrow group-hover:underline" src="/assets/images/arrow.png"></a>
+                </div>
+
+                <div class="space-y-4">
+                    <p class="font-bold text-xl">Advisory Services</p>
+                    <p class="font-light flex-grow leading-6">Targeted Strategic Guidance to help you understand your operating environment</p>
+                    <a href="{{site.baseurl}}/advisory-services" class="flex text-lg text-psa-300 group"><span class="group-hover:underline">Learn more</span><img class="h-6 ml-2 link-arrow group-hover:underline" src="/assets/images/arrow.png"></a>
+                </div>
+            </div>
+
+            <div class="px-8 py-14 mb-12 space-y-8 shadow-md bg-psa-300 mt-16">
+                <p class="text-2xl font-bold text-psa-50">Request for a Due Diligence Report</p>
+
+                <p class="text-blue-300 text-xl">Ready to start a conversation?</p>
+
+                <a href="/contact-us" class="bg-gray-50 px-2 py-4 block rounded-lg text-center text-blue-800 text-lg font-bold">Get in touch</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</div>
+
+{% include how_can_we_help.html %}
